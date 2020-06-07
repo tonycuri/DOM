@@ -31,24 +31,36 @@
 
 
     //querySelector - solo retorna el primer elemento
-    var logo = document.querySelector('#logo');
-    console.log(logo);
+    // var logo = document.querySelector('#logo');
+    // console.log(logo);
 
-    var encabezado = document.querySelector('aside h2');
-    console.log(encabezado);
+    // var encabezado = document.querySelector('aside h2');
+    // console.log(encabezado);
     
-    //querySelectorAll- retorna todos los elementos
-    var encabezado2 = document.querySelectorAll('h2');
-    console.log(encabezado2[0].innerText);
+    // //querySelectorAll- retorna todos los elementos
+    // var encabezado2 = document.querySelectorAll('h2');
+    // console.log(encabezado2[0].innerText);
 
-    var encabezado3 = document.querySelectorAll('h2, footer p');
-    console.log(encabezado3[7].innerText);
+    // var encabezado3 = document.querySelectorAll('h2, footer p');
+    // console.log(encabezado3[7].innerText);
 
-    var enlaces = document.querySelectorAll('a');
-    console.log(enlaces);
-    for(var i = 0; i < enlaces.length;i++){
-      console.log(enlaces[i].innerText);
-    }
+    // var enlaces = document.querySelectorAll('a');
+    // console.log(enlaces);
+    // for(var i = 0; i < enlaces.length;i++){
+    //   console.log(enlaces[i].innerText);
+    // }
+
+
+    //NODOS
+    var enlaces = document.querySelectorAll('#menu ul li a')[0];
+    console.log(enlaces.nodeType);
+    console.log(enlaces.nodeName);
+    console.log(enlaces.attributes);
+    console.log(enlaces.firstChild);
+    console.log(enlaces.firstChild.nodeValue);
+    
+    enlaces.firstChild.nodeValue = 'Home';
+    enlaces.id= 'mi_id';
   });
   
 })();
