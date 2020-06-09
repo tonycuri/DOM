@@ -52,15 +52,37 @@
 
 
     //NODOS
-    var enlaces = document.querySelectorAll('#menu ul li a')[0];
-    console.log(enlaces.nodeType);
-    console.log(enlaces.nodeName);
-    console.log(enlaces.attributes);
-    console.log(enlaces.firstChild);
-    console.log(enlaces.firstChild.nodeValue);
+  //   var enlaces = document.querySelectorAll('#menu ul li a')[0];
+  //   console.log(enlaces.nodeType);
+  //   console.log(enlaces.nodeName);
+  //   console.log(enlaces.attributes);
+  //   console.log(enlaces.firstChild);
+  //   console.log(enlaces.firstChild.nodeValue);
     
-    enlaces.firstChild.nodeValue = 'Home';
-    enlaces.id= 'mi_id';
+  //   enlaces.firstChild.nodeValue = 'Home';
+  //   enlaces.id= 'mi_id';
+
+
+    //crear contenido
+    var sidebar = document.querySelector('#sidebar');
+    var nuevoElemento = document.createElement("H1");
+    var nuevoTexto = document.createTextNode("Hola Mundo");
+
+    nuevoElemento.appendChild(nuevoTexto);
+    sidebar.appendChild(nuevoElemento);
+
+    //agregar entrada 6
+    var enlacesSidebar = document.querySelectorAll('#sidebar ul');
+    //creando el enlace
+    var nuevoEnlace = document.createElement('a');
+    nuevoEnlace.setAttribute('href','http://www.google.com');
+    var textoEnlace = document.createTextNode('Entrada 6');
+    nuevoEnlace.appendChild(textoEnlace);
+    //creando la lista
+    var nuevaLista = document.createElement('li');
+    nuevaLista.appendChild(nuevoEnlace);
+    //lo agregamos al menu
+    enlacesSidebar[0].appendChild(nuevaLista);
+
   });
-  
 })();
