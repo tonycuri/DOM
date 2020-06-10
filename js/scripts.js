@@ -64,25 +64,32 @@
 
 
     //crear contenido
-    var sidebar = document.querySelector('#sidebar');
-    var nuevoElemento = document.createElement("H1");
-    var nuevoTexto = document.createTextNode("Hola Mundo");
+    // var sidebar = document.querySelector('#sidebar');
+    // var nuevoElemento = document.createElement("H1");
+    // var nuevoTexto = document.createTextNode("Hola Mundo");
 
-    nuevoElemento.appendChild(nuevoTexto);
-    sidebar.appendChild(nuevoElemento);
+    // nuevoElemento.appendChild(nuevoTexto);
+    // sidebar.appendChild(nuevoElemento);
 
-    //agregar entrada 6
-    var enlacesSidebar = document.querySelectorAll('#sidebar ul');
-    //creando el enlace
-    var nuevoEnlace = document.createElement('a');
-    nuevoEnlace.setAttribute('href','http://www.google.com');
-    var textoEnlace = document.createTextNode('Entrada 6');
-    nuevoEnlace.appendChild(textoEnlace);
-    //creando la lista
-    var nuevaLista = document.createElement('li');
-    nuevaLista.appendChild(nuevoEnlace);
-    //lo agregamos al menu
-    enlacesSidebar[0].appendChild(nuevaLista);
+    // //agregar entrada 6
+    // var enlacesSidebar = document.querySelectorAll('#sidebar ul');
+    // //creando el enlace
+    // var nuevoEnlace = document.createElement('a');
+    // nuevoEnlace.setAttribute('href','http://www.google.com');
+    // var textoEnlace = document.createTextNode('Entrada 6');
+    // nuevoEnlace.appendChild(textoEnlace);
+    // //creando la lista
+    // var nuevaLista = document.createElement('li');
+    // nuevaLista.appendChild(nuevoEnlace);
+    // //lo agregamos al menu
+    // enlacesSidebar[0].appendChild(nuevaLista);
+
+    //clonar nodo
+    var contenido = document.querySelectorAll('main');
+    var nuevoContenido = contenido[0].cloneNode(true);
+    var sidebar = document.querySelector('aside');
+
+    sidebar.insertBefore(nuevoContenido, sidebar.childNodes[5]);
 
   });
 })();
