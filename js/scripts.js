@@ -85,11 +85,29 @@
     // enlacesSidebar[0].appendChild(nuevaLista);
 
     //clonar nodo
-    var contenido = document.querySelectorAll('main');
-    var nuevoContenido = contenido[0].cloneNode(true);
-    var sidebar = document.querySelector('aside');
+    // var contenido = document.querySelectorAll('main');
+    // var nuevoContenido = contenido[0].cloneNode(true);
+    // var sidebar = document.querySelector('aside');
 
-    sidebar.insertBefore(nuevoContenido, sidebar.childNodes[5]);
+    // sidebar.insertBefore(nuevoContenido, sidebar.childNodes[5]);
+
+    var sidebar = document.querySelector('aside');
+    var masVisitados = document.createElement('H2');
+    var textosVisitados = document.createTextNode('Post más visitados');
+
+    masVisitados.appendChild(textosVisitados);
+    sidebar.insertBefore(masVisitados, sidebar.childNodes[0]);
+
+    var contenido = document.querySelectorAll('main h2');
+
+    for(var i = 0; i < contenido.length; i++){
+      var nuevoElemento = document.createElement('li');
+      var nuevoTexto = document.createTextNode(contenido[i].firstChild.nodeValue);
+      nuevoElemento.appendChild(nuevoTexto);
+      sidebar.insertBefore(nuevoElemento,sidebar.childNodes[1]);
+    }
+
+    
 
   });
 })();
