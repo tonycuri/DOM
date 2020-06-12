@@ -91,23 +91,35 @@
 
     // sidebar.insertBefore(nuevoContenido, sidebar.childNodes[5]);
 
-    var sidebar = document.querySelector('aside');
-    var masVisitados = document.createElement('H2');
-    var textosVisitados = document.createTextNode('Post más visitados');
 
-    masVisitados.appendChild(textosVisitados);
-    sidebar.insertBefore(masVisitados, sidebar.childNodes[0]);
+    //creando lista de post populares
+    // var sidebar = document.querySelector('aside');
+    // var masVisitados = document.createElement('H2');
+    // var textosVisitados = document.createTextNode('Post más visitados');
 
-    var contenido = document.querySelectorAll('main h2');
+    // masVisitados.appendChild(textosVisitados);
+    // sidebar.insertBefore(masVisitados, sidebar.childNodes[0]);
 
-    for(var i = 0; i < contenido.length; i++){
-      var nuevoElemento = document.createElement('li');
-      var nuevoTexto = document.createTextNode(contenido[i].firstChild.nodeValue);
-      nuevoElemento.appendChild(nuevoTexto);
-      sidebar.insertBefore(nuevoElemento,sidebar.childNodes[1]);
-    }
+    // var contenido = document.querySelectorAll('main h2');
 
-    
+    // for(var i = 0; i < contenido.length; i++){
+    //   var nuevoElemento = document.createElement('li');
+    //   var nuevoTexto = document.createTextNode(contenido[i].firstChild.nodeValue);
+    //   nuevoElemento.appendChild(nuevoTexto);
+    //   sidebar.insertBefore(nuevoElemento,sidebar.childNodes[1]);
+    // }
+
+    //eliminar nodos
+    var primerPost = document.querySelector('main article');
+    primerPost.parentNode.removeChild(primerPost);
+
+    var enlaces = document.querySelector('#navegacion nav ul li a');
+    console.log(enlaces);
+    enlaces.parentNode.removeChild(enlaces);
+
+
+
+
 
   });
 })();
