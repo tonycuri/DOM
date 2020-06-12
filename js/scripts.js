@@ -110,14 +110,25 @@
     // }
 
     //eliminar nodos
-    var primerPost = document.querySelector('main article');
-    primerPost.parentNode.removeChild(primerPost);
+    // var primerPost = document.querySelector('main article');
+    // primerPost.parentNode.removeChild(primerPost);
 
-    var enlaces = document.querySelector('#navegacion nav ul li a');
-    console.log(enlaces);
-    enlaces.parentNode.removeChild(enlaces);
+    // var enlaces = document.querySelector('#navegacion nav ul li a');
+    // console.log(enlaces);
+    // enlaces.parentNode.removeChild(enlaces);
 
+    //reemplazar nodos
+    var viejoNodo = document.querySelector('main h2');
+    var nuevoNodo = document.querySelector('footer h2');
 
+    viejoNodo.parentNode.replaceChild(nuevoNodo, viejoNodo);
+
+    var nuevoTitulo = document.createElement('h2');
+    var nuevoTexto = document.createTextNode('Hola mundo');
+    nuevoTitulo.appendChild(nuevoTexto);
+
+    var viejoNodo2 = document.querySelector('main h2');
+    viejoNodo2.parentNode.replaceChild(nuevoTitulo,viejoNodo2);
 
 
 
